@@ -27,9 +27,13 @@ namespace Trestlebridge.Actions
                 case 1:
                     Console.WriteLine("generating grazing field, please press enter to continue");
                     Console.ReadLine();
-
-
                     farm.AddGrazingField(new GrazingField());
+                    break;
+
+                case 2:
+                    Console.WriteLine("Generating plowed field, please press enter to continue");
+                    Console.ReadLine();
+                    farm.AddPlowedField(new PlowedField());
                     break;
 
 
@@ -43,7 +47,6 @@ namespace Trestlebridge.Actions
                 case 3:
                     Console.WriteLine("Creating chicken house, please press enter to continue");
                     Console.ReadLine();
-
                     farm.AddChickenHouse(new ChickenHouse());
                     break;
 
