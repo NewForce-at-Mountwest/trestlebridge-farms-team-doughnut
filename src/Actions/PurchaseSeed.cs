@@ -3,6 +3,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Plants;
 using Trestlebridge.Models.Facilities;
+using Trestlebridge.Actions;
 
 namespace Trestlebridge.Actions {
     public class PurchaseSeed {
@@ -20,13 +21,15 @@ namespace Trestlebridge.Actions {
             switch (Int32.Parse(choice))
             {
                 case 1:
-                    ChooseSunflowerSeed.CollectInput(farm, new Sunflower());
+                    Console.WriteLine("purchasing Sunflower Seed, press enter to continue");
+                    Console.ReadLine();
+                    Farm.PurchaseResource<Sunflower>();
                     break;
                 case 2:
-                    ChooseWildflowerSeed.CollectInput(farm, new Wildflower());
+                    ChooseNaturalField.CollectInput(farm, new Wildflower());
                     break;
-                case 1:
-                    ChooseSesameSeed.CollectInput(farm, new Sesame());
+                case 3:
+                    ChoosePlowedField.CollectInput(farm, new Sesame());
                     break;
                 default:
                     break;
