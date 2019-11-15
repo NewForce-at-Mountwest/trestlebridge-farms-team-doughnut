@@ -54,7 +54,19 @@ namespace Trestlebridge.Models
             NaturalFields.ForEach(nf => report.Append(nf));
             ChickenHouses.ForEach(ch => report.Append(ch));
 
+             DuckHouses.ForEach(gf => report.Append(gf));
+
             return report.ToString();
+
+
+        }
+
+                public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
+
+        public void AddDuckHouse(DuckHouse field)
+        {
+
+            DuckHouses.Add(field);
         }
 
 
