@@ -21,6 +21,10 @@ namespace Trestlebridge.Actions {
             switch (Int32.Parse(input))
             {
                 case 1:
+                    Console.WriteLine ("generating grazing field, please press enter to continue");
+                    Console.ReadLine ();
+
+
                     farm.AddGrazingField(new GrazingField());
                     break;
                 default:
