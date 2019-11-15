@@ -9,8 +9,10 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
         public List<NaturalField> NaturalFields {get; } = new List<NaturalField>();
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         /*
             This method must specify the correct product interface of the
@@ -35,6 +37,10 @@ namespace Trestlebridge.Models
             GrazingFields.Add(field);
         }
 
+        public void AddPlowedField (PlowedField field)
+        {
+            PlowedFields.Add(field);
+        }
         public void AddNaturalField (NaturalField field)
         {
             NaturalFields.Add(field);
@@ -46,6 +52,12 @@ namespace Trestlebridge.Models
             ChickenHouses.Add(house);
         }
 
+        public void AddDuckHouse(DuckHouse field)
+        {
+
+            DuckHouses.Add(field);
+        }
+
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
@@ -53,6 +65,7 @@ namespace Trestlebridge.Models
             GrazingFields.ForEach(gf => report.Append(gf));
             NaturalFields.ForEach(nf => report.Append(nf));
             ChickenHouses.ForEach(ch => report.Append(ch));
+            PlowedFields.ForEach(pf => report.Append(pf));
 
              DuckHouses.ForEach(gf => report.Append(gf));
 
@@ -60,15 +73,5 @@ namespace Trestlebridge.Models
 
 
         }
-
-                public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
-
-        public void AddDuckHouse(DuckHouse field)
-        {
-
-            DuckHouses.Add(field);
-        }
-
-
     }
 }
