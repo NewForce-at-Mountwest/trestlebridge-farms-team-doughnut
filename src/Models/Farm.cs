@@ -10,7 +10,7 @@ namespace Trestlebridge.Models
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
-        public List<NaturalField> NaturalFields {get; } = new List<NaturalField>();
+        public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
@@ -26,6 +26,12 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Chicken":
+                    ChickenHouses[index].AddResource((IResource)resource);
+                    break;
+                case "Duck":
+                    DuckHouses[index].AddResource((IResource)resource);
+                    break;
                 case "Ostrich":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
@@ -36,7 +42,7 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
                 case "Goat":
-                GrazingFields[index].AddResource((IGrazing)resource);
+                    GrazingFields[index].AddResource((IGrazing)resource);
                     break;
                 default:
                     break;
@@ -49,11 +55,11 @@ namespace Trestlebridge.Models
             GrazingFields.Add(field);
         }
 
-        public void AddPlowedField (PlowedField field)
+        public void AddPlowedField(PlowedField field)
         {
             PlowedFields.Add(field);
         }
-        public void AddNaturalField (NaturalField field)
+        public void AddNaturalField(NaturalField field)
         {
             NaturalFields.Add(field);
         }
