@@ -13,6 +13,9 @@ namespace Trestlebridge.Models.Facilities
 
         private List<IResource> _chickens = new List<IResource>();
 
+        public double chickenCount { get { return _chickens.Count; } }
+
+
         public double Capacity
         {
             get
@@ -39,7 +42,7 @@ namespace Trestlebridge.Models.Facilities
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Chicken House {shortId} has {this._chickens.Count} animals\n");
+            output.Append($"Chicken House {shortId} has {this._chickens.Count} chickens\n");
             this._chickens.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
