@@ -12,20 +12,20 @@ namespace Trestlebridge.Actions
         {
             Utils.Clear();
 
-            for (int i = 0; i < farm.ChickenHouses.Count; i++)
+            for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Chicken House ");
+                Console.WriteLine($"{i + 1}. Duck House ");
             }
 
             Console.WriteLine();
 
             // How can I output the type of chicken chosen here?
-            Console.WriteLine($"Place the chicken where?");
+            Console.WriteLine($"Place the duck where?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.ChickenHouses[choice - 1].AddResource(chicken);
+            farm.DuckHouses[choice - 1].AddResource(duck);
         }
     }
 }
