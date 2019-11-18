@@ -3,11 +3,16 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sesame : IResource, ISeedProducing, IPlowed
+    public class Sunflower : IResource, ISeedProducing, IPlowed, INatural
     {
-        private int _seedsProduced = 40;
-        public string Type { get; } = "Sesame";
+        private int _seedsProduced = 65;
+        public string Type { get; } = "Sunflower";
         public double SeedsPerRow { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void ChooseNatural()
+        {
+            throw new NotImplementedException();
+        }
 
         public void ChoosePlowed()
         {
@@ -19,7 +24,7 @@ namespace Trestlebridge.Models.Plants
         }
 
         public override string ToString () {
-            return $"Sesame. Yum!";
+            return $"Sunflower. Yum!";
         }
     }
 }

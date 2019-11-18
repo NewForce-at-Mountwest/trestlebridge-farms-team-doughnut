@@ -20,15 +20,19 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (INatural plants)
         {
-            // TODO: implement this...
+
+           _plants.Add(plants);
+        }
+
+        public void AddResource(List<INatural> resources)
+        {
             throw new NotImplementedException();
         }
 
-        public void AddResource (List<INatural> plants)
-        {
-            // TODO: implement this...
-            throw new NotImplementedException();
-        }
+        // public void AddResource(List<INatural> plants) =>
+        //    // TODO: implement this...
+        //    _plants.Add(List < INatural > plants)
+
 
         public override string ToString()
         {
