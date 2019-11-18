@@ -9,7 +9,7 @@ namespace Trestlebridge.Actions {
     public class PurchaseSeed {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Sunflower");
-            Console.WriteLine ("2. Wilflower");
+            Console.WriteLine ("2. Wildflower");
             Console.WriteLine ("3. Sesame");
 
             Console.WriteLine ();
@@ -32,13 +32,15 @@ namespace Trestlebridge.Actions {
                     // List plowed fields and user inputs the number, which will be used as second parameter.
                     int i;
                     for(i = 0; i < farm.PlowedFields.Count; i++){
-                        Console.WriteLine($"{i+1} Plowed Field");}
+                        Console.WriteLine($"{i} Plowed Field");}
 
                         Console.WriteLine("Choose a Plowed Field");
                         Console.Write("> ");
                         string pickNumber = Console.ReadLine();
                         int result = Int32.Parse(pickNumber);
                         farm.PurchaseResource<Sunflower>(new Sunflower(), result);
+                        farm.PlowedFields[result].AddResource(new Sunflower());
+
                     }
                 else if (option == "2")
                 {
@@ -46,15 +48,17 @@ namespace Trestlebridge.Actions {
 
                     int i;
                     for(i = 0; i < farm.NaturalFields.Count; i++){
-                        Console.WriteLine($"{i+1} Natural Field");}
+                        Console.WriteLine($"{i} Natural Field");}
 
                         Console.WriteLine("Choose a Natural Field");
                         Console.Write("> ");
                         string pickNumber = Console.ReadLine();
                         int result = Int32.Parse(pickNumber);
                         farm.PurchaseResource<Sunflower>(new Sunflower(), result);
+                       farm.NaturalFields[result].AddResource(new Sunflower());
                     }
                 }
+
 
                else if (choice == "2")
 
@@ -63,13 +67,14 @@ namespace Trestlebridge.Actions {
 
                     int i;
                     for(i = 0; i < farm.NaturalFields.Count; i++){
-                        Console.WriteLine($"{i+1} Natural Field");}
+                        Console.WriteLine($"{i} Natural Field");}
 
                         Console.WriteLine("Choose a Natural Field");
                         Console.Write("> ");
                         string pickNumber = Console.ReadLine();
                         int result = Int32.Parse(pickNumber);
                         farm.PurchaseResource<Wildflower>(new Wildflower(), result);
+                        farm.NaturalFields[result].AddResource(new Wildflower());
                     }
 
               else if (choice == "3")
@@ -78,13 +83,14 @@ namespace Trestlebridge.Actions {
 
                     int i;
                     for(i = 0; i < farm.PlowedFields.Count; i++){
-                        Console.WriteLine($"{i+1} Plowed Field");}
+                        Console.WriteLine($"{i} Plowed Field");}
 
                         Console.WriteLine("Choose a Plowed Field");
                         Console.Write("> ");
                         string pickNumber = Console.ReadLine();
                         int result = Int32.Parse(pickNumber);
                         farm.PurchaseResource<Sesame>(new Sesame(), result);
+                        farm.PlowedFields[result].AddResource(new Sesame());
                     }
 
             }

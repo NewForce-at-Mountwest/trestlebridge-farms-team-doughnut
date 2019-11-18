@@ -21,14 +21,19 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (IPlowed plant)
         {
             // TODO: implement this...
+            _plants.Add(plant);
+        }
+
+        public void AddResource(List<IPlowed> resources)
+        {
             throw new NotImplementedException();
         }
 
-        public void AddResource (List<IPlowed> plants)
-        {
-            // TODO: implement this...
-            throw new NotImplementedException();
-        }
+        // public void AddResource (List<IPlowed> plants)
+        // {
+        //     // TODO: implement this...
+        //     _plants.Add(plants)
+        // }
 
         public override string ToString()
         {
