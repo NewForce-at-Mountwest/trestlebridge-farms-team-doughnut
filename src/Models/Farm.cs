@@ -26,6 +26,18 @@ namespace Trestlebridge.Models
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Ostrich":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+                case "Pig":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+                case "Sheep":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+                case "Goat":
+                GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
                 default:
                     break;
             }
@@ -66,8 +78,7 @@ namespace Trestlebridge.Models
             NaturalFields.ForEach(nf => report.Append(nf));
             ChickenHouses.ForEach(ch => report.Append(ch));
             PlowedFields.ForEach(pf => report.Append(pf));
-
-             DuckHouses.ForEach(gf => report.Append(gf));
+            DuckHouses.ForEach(gf => report.Append(gf));
 
             return report.ToString();
 
