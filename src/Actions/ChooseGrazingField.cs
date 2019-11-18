@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -12,9 +14,13 @@ namespace Trestlebridge.Actions
         {
             Utils.Clear();
 
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            Console.WriteLine ("List of grazing fields: ");
+
+            List<GrazingField> AvailableGrazing = farm.GrazingFields.Where(field => field.Availability > 0).ToList();
+
+            for (int i = 0; i < AvailableGrazing.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
+                Console.WriteLine($"{i + 1}. Grazing Field({AvailableGrazing[i].ShortId}), currently contains {AvailableGrazing[i].AnimalCount} animals.");
             }
 
             Console.WriteLine();
@@ -23,9 +29,10 @@ namespace Trestlebridge.Actions
             Console.WriteLine($"Place the animal where?");
 
             Console.Write("> ");
-            int choice = Int32.Parse(Console.ReadLine());
+            int choice = Int32.Parse(Console.ReadLine()) - 1;
 
-            farm.GrazingFields[choice].AddResource(animal);
+            AvailableGrazing[choice].AddResource(animal);
+            Console.WriteLine(AvailableGrazing[choice]);
 
             /*
                 Couldn't get this to work. Can you?

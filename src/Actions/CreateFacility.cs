@@ -12,7 +12,6 @@ namespace Trestlebridge.Actions
             Console.WriteLine("1. Grazing field");
             Console.WriteLine("2. Plowed field");
             Console.WriteLine("3. Chicken house");
-
             Console.WriteLine ("4. Natural Field");
             Console.WriteLine ("5. Duck House");
 
