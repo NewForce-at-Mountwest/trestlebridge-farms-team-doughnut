@@ -32,7 +32,7 @@ namespace Trestlebridge.Actions {
                     // List plowed fields and user inputs the number, which will be used as second parameter.
                     int i;
                     for(i = 0; i < farm.PlowedFields.Count; i++){
-                        Console.WriteLine($"{i} Plowed Field");}
+                        Console.WriteLine($"{i+1} Plowed Field");}
 
                         Console.WriteLine("Choose a Plowed Field");
                         Console.Write("> ");
@@ -45,8 +45,8 @@ namespace Trestlebridge.Actions {
                     // List Natural Fields and give option of which one user wants to pick.
 
                     int i;
-                    for(i = 1; i < farm.NaturalFields.Count; i++){
-                        Console.WriteLine($"{i} Natural Field");}
+                    for(i = 0; i < farm.NaturalFields.Count; i++){
+                        Console.WriteLine($"{i+1} Natural Field");}
 
                         Console.WriteLine("Choose a Natural Field");
                         Console.Write("> ");
@@ -62,8 +62,8 @@ namespace Trestlebridge.Actions {
                     // List Natural Fields and give option of which one user wants to pick.
 
                     int i;
-                    for(i = 1; i < farm.NaturalFields.Count; i++){
-                        Console.WriteLine($"{i} Natural Field");}
+                    for(i = 0; i < farm.NaturalFields.Count; i++){
+                        Console.WriteLine($"{i+1} Natural Field");}
 
                         Console.WriteLine("Choose a Natural Field");
                         Console.Write("> ");
@@ -77,8 +77,8 @@ namespace Trestlebridge.Actions {
                 {
 
                     int i;
-                    for(i = 1; i < farm.PlowedFields.Count; i++){
-                        Console.WriteLine($"{i} Plowed Field");}
+                    for(i = 0; i < farm.PlowedFields.Count; i++){
+                        Console.WriteLine($"{i+1} Plowed Field");}
 
                         Console.WriteLine("Choose a Plowed Field");
                         Console.Write("> ");
