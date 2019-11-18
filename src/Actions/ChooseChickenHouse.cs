@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -12,9 +14,13 @@ namespace Trestlebridge.Actions
         {
             Utils.Clear();
 
+            Console.WriteLine("List of chicken houses: ");
+
+            List<ChickenHouse> AvailableChickenHouses = farm.ChickenHouses.Where(house => house.Availability > 0).ToList();
+
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Chicken House ");
+                Console.WriteLine($"{i + 1}. Chicken House ({AvailableChickenHouses[i].ShortId}), currently contains {AvailableChickenHouses[i].AnimalCount} chickens.");
             }
 
             Console.WriteLine();

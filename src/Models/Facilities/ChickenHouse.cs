@@ -15,12 +15,36 @@ namespace Trestlebridge.Models.Facilities
 
         public double chickenCount { get { return _chickens.Count; } }
 
+        public string ShortId
+        {
+            get
+            {
+                return $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+            }
+        }
+
 
         public double Capacity
         {
             get
             {
                 return _capacity;
+            }
+        }
+
+        public double Availability
+        {
+            get
+            {
+                return _capacity - _chickens.Count;
+            }
+        }
+
+        public double AnimalCount
+        {
+            get
+            {
+                return _chickens.Count;
             }
         }
 

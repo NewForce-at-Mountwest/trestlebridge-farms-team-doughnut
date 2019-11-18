@@ -13,11 +13,35 @@ namespace Trestlebridge.Models.Facilities
 
         private List<IResource> _ducks = new List<IResource>();
 
+        public string ShortId
+        {
+            get
+            {
+                return $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+            }
+        }
+
         public double Capacity
         {
             get
             {
                 return _capacity;
+            }
+        }
+
+        public double Availability
+        {
+            get
+            {
+                return _capacity - _ducks.Count;
+            }
+        }
+
+        public double AnimalCount
+        {
+            get
+            {
+                return _ducks.Count;
             }
         }
 
